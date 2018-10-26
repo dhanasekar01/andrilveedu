@@ -34,9 +34,10 @@
          behaviour is set to match that of Cordova versions before 3.6.0, and
          should be reviewed before launching an application in production. It
          may be changed in the future. -->
-    <allow-intent href="http://*/*" />
-    <allow-intent href="https://*/*" />
-    <allow-intent href="market:*" />
+    
+	<allow-navigation href="*" />
+	<allow-intent href="*" />
+	<access origin="*" />
 
     <preference name="loglevel" value="DEBUG" />
 	<preference name="AndroidPersistentFileLocation" value="Compatibility" />`
