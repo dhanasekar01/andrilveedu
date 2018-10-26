@@ -1,0 +1,150 @@
+﻿    .page-blue .header {
+        background-image: url(/images/blue.jpg);
+        z-index: 30;
+    }
+
+    .page-blue .header.fixed, .page-blue .header.open {
+        background-color: #293696;
+    }
+
+    #counter {
+        width: 5em;
+        height: 5em;
+        background: purple;
+        -moz-border-radius: 50px;
+        -webkit-border-radius: 50px;
+        border-radius: 50px;
+        text-align: center;
+        margin: auto;
+    }
+
+    #counter2 {
+         width: 5em;
+        height: 5em;
+        background: red;
+        -moz-border-radius: 50px;
+        -webkit-border-radius: 50px;
+        border-radius: 50px;
+        text-align: center;
+        margin: auto;
+    }
+
+    #counter3 {
+         width: 5em;
+        height: 5em;
+        background: orange;
+        -moz-border-radius: 50px;
+        -webkit-border-radius: 50px;
+        border-radius: 50px;
+        text-align: center;
+        margin: auto;
+    }
+
+    #counter4 {
+         width: 5em;
+        height: 5em;
+        background: green;
+        -moz-border-radius: 50px;
+        -webkit-border-radius: 50px;
+        border-radius: 50px;
+        text-align: center;
+        margin: auto;
+    }
+
+     #counter5 {
+         width: 5em;
+        height: 5em;
+        background: darkcyan;
+        -moz-border-radius: 50px;
+        -webkit-border-radius: 50px;
+        border-radius: 50px;
+        text-align: center;
+        margin: auto;
+    }
+
+     #counter6 {
+         width: 5em;
+        height: 5em;
+        background: blue;
+        -moz-border-radius: 50px;
+        -webkit-border-radius: 50px;
+        border-radius: 50px;
+        text-align: center;
+        margin: auto;
+    }
+
+     #counter6 {
+         width: 5em;
+        height: 5em;
+        background: coral;
+        -moz-border-radius: 50px;
+        -webkit-border-radius: 50px;
+        border-radius: 50px;
+        text-align: center;
+        margin: auto;
+    }
+
+      #counter7 {
+         width: 5em;
+        height: 5em;
+        background: cornflowerblue;
+        -moz-border-radius: 50px;
+        -webkit-border-radius: 50px;
+        border-radius: 50px;
+        text-align: center;
+        margin: auto;
+    }
+
+    .count {
+        line-height: 3.3em;
+        color: white;
+        /*margin-left: 30px;*/
+        font-size: 25px;
+        cursor:pointer;
+    }
+    a.km-detail{
+        cursor:pointer;
+    }
+
+    .my-legend .legend-title {
+            text-align: left;
+            margin-bottom: 5px;
+            font-weight: bold;
+            font-size: 90%;
+        }
+
+        .my-legend .legend-scale ul {
+            margin: 0;
+            margin-bottom: 5px;
+            padding: 0;
+            float: left;
+            list-style: none;
+        }
+
+            .my-legend .legend-scale ul li {
+                font-size: 80%;
+                list-style: none;
+                margin-left: 0;
+                line-height: 18px;
+                margin-bottom: 2px;
+            }
+
+        .my-legend ul.legend-labels li span {
+            display: block;
+            float: left;
+            height: 16px;
+            width: 30px;
+            margin-right: 5px;
+            margin-left: 0;
+            border: 1px solid #999;
+        }
+
+        .my-legend .legend-source {
+            font-size: 70%;
+            color: #999;
+            clear: both;
+        }
+
+        .my-legend a {
+            color: #777;
+        }

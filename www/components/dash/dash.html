@@ -1,0 +1,329 @@
+﻿<div data-role="view" data-title="Dashboard" data-layout="main-nonav" data-model="app.dash" data-show="app.dash.onShow" data-after-show="app.dash.afterShow" id="dashScreen" class="screen">
+    <div class="wrapper">
+        <div class="sidebar" data-active-color="rose" data-background-color="blue" data-image="img/sidebar-1.jpg">
+            <!--
+            Tip 1: You can change the color of active element of the sidebar using: data-active-color="purple | blue | green | orange | red | rose"
+            Tip 2: you can also add an image using data-image tag
+            Tip 3: you can change the color of the sidebar with data-background-color="white | black"
+        -->
+
+            <div class="logo">
+                <a href="/" class="simple-text logo-mini">
+                    <img src="img/home.png" style="width:25px;">
+                </a>
+
+                <a href="/" class="simple-text logo-normal">
+                    Andril Veedu
+                </a>
+            </div>
+
+            <div class="sidebar-wrapper ps-container ps-theme-default ps-active-y" data-ps-id="59516376-9ed9-af92-43a0-f4f2af309bed">
+                <div class="user">
+                    <div class="photo">
+                        <img src="img/Dhana.jpg">
+                    </div>
+                    <div class="info">
+                        <a data-toggle="collapse" href="#collapseExample" class="collapsed">
+                            <span >
+                                <span data-bind="text: dashModel.Welcome"></span>
+                                <b class="caret"></b>
+                            </span>
+                        </a>
+                        <div class="clearfix"></div>
+                        <div class="collapse" id="collapseExample">
+                            <ul class="nav">
+                                <li>
+                                    <a href="#">
+                                        <span class="sidebar-mini"> MP </span>
+                                        <span class="sidebar-normal"> My Profile </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="sidebar-mini"> EP </span>
+                                        <span class="sidebar-normal"> Edit Profile </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="sidebar-mini"> S </span>
+                                        <span class="sidebar-normal"> Settings </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <ul class="nav">
+
+                    <li class="active">
+                        <a >
+                            <i class="material-icons">dashboard</i>
+                            <p> Dashboard </p>
+                        </a>
+                    </li>
+
+                </ul>
+                <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 0px;"><div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; height: 562px; right: 0px;"><div class="ps-scrollbar-y" tabindex="0" style="top: 0px; height: 486px;"></div></div>
+            </div>
+            <div class="sidebar-background" style="background-image: url(img/sidebar-1.jpg) "></div>
+        </div>
+
+        <div class="dashboard-page" data-image="img/login.jpeg">
+            <div class="main-panel" style="background: url('img/dash.jpeg');">
+
+                <nav class="navbar navbar-transparent navbar-absolute">
+                    <div class="container-fluid">
+                        <div class="navbar-header" style="width:100%">
+                            <a class="navbar-brand" data-bind="events :{ click: dashModel.updateSalary}"><h4 style="color:white"><span data-bind="text: dashModel.currentMonth"></span> - ₹​ <span data-bind="text: dashModel.salary"></span></h4></a>
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" style="color:white;">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+
+                            <button type="button" class="btn btn-white btn-round btn-fab btn-simple" style="color:white;">
+                                <span class="sr-only">Chart</span>
+                                <i class="material-icons text-white">data_usage</i>
+                            </button>
+
+                        </div>
+
+                    </div>
+                </nav>
+
+
+                <div class="content">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <table class="table" style="margin-bottom: -1rem">
+                                    <tr>
+                                        <td width="65%">
+                                            <h2 style="color:white">₹​ <span style="font-weight:500;font-size:x-large" data-bind="text: dashModel.totalSpends"></span></h2>
+                                            <div id="jq"></div>
+                                        </td>
+                                        <td width="35%">
+                                            <button data-bind="events :{ click: dashModel.addspend}" class="btn btn-white btn-round btn-fab btn-simple">
+                                                <i class="material-icons text-white">add_box</i>
+                                                <div class="ripple-container"></div>
+                                            </button>
+                                            <button class="btn btn-white btn-round btn-fab btn-simple">
+                                                <i class="material-icons text-white">bar_chart</i>
+                                                <div class="ripple-container"></div>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </table>
+
+                                <div class="card">
+                                    <div class="card-header card-header-icon" data-background-color="green">
+                                        <i class="material-icons">assessment</i>
+                                    </div>
+                                    <div class="card-content">
+                                        <h4 class="card-title">Spends</h4>
+                                        <div class="row">
+                                            <div class="col-md-5">
+                                                <div id="category">
+
+                                                </div>
+                                                <div class="table-responsive">
+                                                    <table id="datatables" class="table">
+                                                        <tbody id="spends"></tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer">
+                                        <div class="stats">
+                                            <a data-bind="events:{click:showMoreSpends}">Get More </a> <i class="material-icons text-danger">more</i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="card">
+                                    <div class="card-header card-header-tabs" data-background-color="rose">
+                                        <div class="nav-tabs-navigation">
+                                            <div class="nav-tabs-wrapper">
+                                                <span class="nav-tabs-title">Tasks:</span>
+                                                <ul class="nav nav-tabs" data-tabs="tabs">
+                                                    <li class="">
+                                                        <a href="#profile" data-toggle="tab">
+                                                            <i class="material-icons">assignment</i>
+                                                            Todo
+                                                            <div class="ripple-container"></div>
+                                                        </a>
+                                                    </li>
+                                                    <li class="">
+                                                        <a href="#messages" data-toggle="tab">
+                                                            <i class="material-icons">check_circle_outline</i>
+                                                            Completed
+                                                            <div class="ripple-container"></div>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card-content">
+                                        <div class="tab-content">
+                                            <div class="tab-pane active" id="profile">
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <td colspan="2" width="85%">
+                                                                <div class="input-group">
+                                                                    <span class="input-group-addon">
+                                                                        <i class="material-icons">description</i>
+                                                                    </span>
+                                                                    <div class="form-group label-floating">
+                                                                        <input id="newTask" name="newTask" data-bind="value: dashModel.newTask" type="text" placeholder="Add new Task" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td  width="15%">
+                                                                <button type="button" rel="tooltip" data-bind="click: dashModel.addTask" title="Add Task" class="btn btn-primary btn-simple btn-xs">
+                                                                    <i class="material-icons">add</i>
+                                                                </button>
+                                                            </td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody data-template="row-template" data-bind="source: dashModel.tasks">
+                                                        
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div class="tab-pane" id="messages">
+                                                <table class="table">
+                                                    <tbody  data-template="complete-template" data-bind="source: dashModel.completedTasks">
+                                                        
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row" id="todo"></div>
+                    </div>
+                </div>
+
+
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <p class="copyright pull-right text-white" style="color:white">
+                            &copy;
+                            <a style="color:white"> Andril Veedu </a>,  made with love for a better Home
+                        </p>
+                    </div>
+                </footer>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<script id="spendTemplate" type="text/x-kendo-template">
+    # var total =data.length; if(data.length > 10) { total =10;} for(var i= total - 1; i >= 0;i--) { #
+    <tr>
+        <td class="text-center">
+            <div class="cat">
+                <img src="img/category/${data[i].category}.png">
+            </div>
+        </td>
+        <td>${data[i].item}</td>
+        <td class="text-center">
+            ₹​ ${data[i].amount}
+        </td>
+        <td class="text-center">
+            #= $.timeago(data[i].date) #
+        </td>
+    </tr>
+    #}#
+</script>
+
+<script id="categoryTemplate" type="text/x-kendo-template">
+    <div class="swiper-container" id="categorySwiper">
+        <div class="swiper-wrapper">
+            #for(var i=0;i < data.length;i++) { #
+            <div class="swiper-slide">
+                <button class="btn btn-just-icon btn-simple btn-twitter">
+                    <img src="${data[i].img}" />
+                </button> <br />
+                <p style="text-align:center;margin-top:-1em;">${data[i].category}</p>
+            </div>
+            #}#
+        </div>
+    </div>
+</script>
+<script id="todoTemplate" type="text/x-kendo-template">
+    <div class="swiper-container" id="todoSwiper">
+        <div class="swiper-wrapper">
+            #for(var i=0;i < data.length;i++) { #
+            <div class="swiper-slide">
+                <div class="col-sm-6">
+                    <div class="card card-stats">
+                        <div class="card-header" data-background-color="blue">
+                            <i class="fa fa-twitter"></i>
+                        </div>
+                        <div class="card-content">
+                            <p class="category">Followers</p>
+                            <h3 class="card-title">+245</h3>
+                        </div>
+                        <div class="card-footer">
+                            <div class="stats">
+                                <i class="material-icons">update</i> Just Updated
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            #}#
+        </div>
+    </div>
+</script>
+<script id="row-template" type="text/x-kendo-template">
+    <tr>
+        <td width="10%">
+            <div  class="checkbox">
+                <label>
+                    <input type="checkbox" name="status" data-bind="click: dashModel.completeTask" >
+                </label>
+            </div>
+        </td>
+        <td  width="80%">
+            <strong data-bind="text: task"></strong> <br/>
+            <span>#: $.timeago(date)#</span>
+        </td>
+        <td width="10%" class="td-actions text-right">
+            <button data-bind="click: dashModel.deleteTask" type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                <i class="material-icons">close</i>
+            </button>
+        </td>
+    </tr>
+</script>
+<script id="complete-template" type="text/x-kendo-template">
+    <tr>
+        <td>
+            <strong data-bind="text: task"></strong>
+        </td>
+        <td> #: $.timeago(date)#</td>
+        <td class="td-actions text-right">
+            <button data-bind="click: dashModel.deleteCompletedTask" type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                <i class="material-icons">close</i>
+            </button>
+        </td>
+    </tr>
+</script>
+
+

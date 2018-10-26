@@ -1,0 +1,69 @@
+<div data-role="view" data-title="Home" data-layout="main-nonav" data-model="app.home" data-show="app.home.onShow" data-after-show="app.home.afterShow" id="homeScreen" class="screen">
+    <div class="wrapper wrapper-full-page">
+        <div class="full-page login-page" filter-color="black" data-image="img/login.jpeg">
+            <!--   you can change the color of the filter page using: data-color="blue | purple | green | orange | red | rose " -->
+            <div class="content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6 col-md-offset-4 col-sm-offset-3">
+                            <form>
+                                <div class="card card-login card-hidden">
+                                    <div class="card-header text-center" data-background-color="rose">
+                                        <h4 class="card-title">Login</h4>
+                                        <div class="social-line">
+                                            <a href="#btn" class="btn btn-just-icon btn-simple">
+                                                <div class="photo">
+                                                    <img src="img/Dhana.jpg" /> 
+                                                </div>
+                                            </a>
+                                            <a href="#pablo" class="btn btn-just-icon btn-simple">
+                                                <div class="photo">
+                                                    <img src="https://demos.creative-tim.com/bs3/material-dashboard-pro/assets/img/faces/avatar.jpg">
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <p class="category text-center">
+                                        Or Be Classical
+                                    </p>
+                                    <div class="card-content">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="material-icons">face</i>
+                                            </span>
+
+                                            <div class="form-group label-floating" style="width: 80%;">
+                                                <label class="control-label">Name</label>
+                                                <input type="text"  class="form-control" id="loginuser" data-bind="value: homeModel.username">
+                                            </div>
+                                        </div>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="material-icons">lock_outline</i>
+                                            </span>
+                                            <div class="form-group label-floating" style="width: 80%;">
+                                                <label class="control-label">Pin</label>
+                                                <input type="password" class="form-control" id="login-password" data-bind="value: homeModel.password" >
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="footer text-center">
+                                        <button type="button" data-bind="events:{ click : homeModel.signin}" class="btn btn-rose btn-simple btn-wd btn-lg">Let's go</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="container-fluid">
+                    <p class="copyright pull-right text-white" style="color:white">
+                        &copy;
+                        <a style="color:white"> Andril Veedu </a>,  made with love for a better Home
+                    </p>
+                </div>
+            </footer>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+<div data-role="view" data-title="Lock" data-layout="main-nonav" data-model="app.lock" data-show="app.lock.onShow" data-after-show="app.lock.afterShow" id="lockScreen" class="screen">
+    <div class="wrapper wrapper-full-page">
+        <div class="full-page lock-page" filter-color="black" data-image="img/login.jpeg">
+            <!--   you can change the color of the filter page using: data-color="blue | purple | green | orange | red | rose " -->
+            <div class="content">
+                <div class="card card-profile card-hidden">
+                    <div class="card-avatar">
+                        <a href="#pablo">
+                            <img class="avatar" id="loginUserImg" src="img/Dhana.jpg" alt="...">
+                        </a>
+                    </div>
+                    <div class="card-content">
+                        <h4 class="card-title" data-bind="text: lockModel.username"></h4>
+                            <input type="password" id="lockpin" class="form-control" placeholder="PIN"  data-bind="events: {change: lockModel.autologin}, value: lockModel.password">
+                    </div>
+                    <div class="card-footer">
+                        <button type="button" class="btn btn-rose btn-round" data-bind="events:{ click : lockModel.signin}">Unlock</button>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="footer">
+                <div class="container-fluid">
+                    <p class="copyright pull-right text-white" style="color:white">
+                        &copy;
+                        <a style="color:white"> Andril Veedu </a>,  made with love for a better Home
+                    </p>
+                </div>
+            </footer>
+        </div>
+    </div>
+</div>

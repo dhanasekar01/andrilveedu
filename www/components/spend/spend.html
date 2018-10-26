@@ -1,0 +1,169 @@
+<div data-role="view" data-title="Spend" data-layout="main-nonav" data-model="app.spend" data-show="app.spend.onShow" data-after-show="app.spend.afterShow" id="spendScreen" class="screen">
+    <div class="wrapper">
+        <div class="dashboard-page" data-image="img/login.jpeg">
+            <div class="main-panel" style="background: url('img/dash.jpeg');">
+                <nav class="navbar navbar-transparent navbar-absolute">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <a id="back-button" class="nav-button pull-right" data-align="left" style="background-color:transparent;color:white;border-color:white; margin-right:10px" data-role="backbutton">Back</a>
+                            <a class="navbar-brand"><h4 style="color:white">Spend Tracker</h4></a>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class="content">
+                    <div class="container-fluid">
+                        <div class="col-sm-8 col-sm-offset-2">
+                            <!--      Wizard container        -->
+                            <div class="wizard-container">
+                                <div class="card wizard-card" data-color="rose" id="wizardProfile">
+                                    <form class="form-horizontal">
+                                        <!--        You can switch " data-color="purple" "  with one of the next bright colors: "green", "orange", "red", "blue"       -->
+
+                                        <div class="wizard-header">
+                                            <h3 class="wizard-title">
+                                                Add a Spend
+                                            </h3>
+                                        </div>
+                                        <div class="wizard-navigation">
+                                            <ul>
+                                                <li><a href="#mycategory" data-toggle="tab">Category</a></li>
+                                                <li><a href="#about" data-toggle="tab">Details</a></li>
+                                                <li><a href="#address" data-toggle="tab">More</a></li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="tab-content">
+                                            <div class="tab-pane" id="mycategory">
+                                                <div class="row">
+                                                    <div class="col-lg-10 col-lg-offset-1">
+                                                        <div class="table-responsive">
+                                                            <table class="table">
+                                                                <tbody id="categorylist"></tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="tab-pane" id="about">
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon">
+                                                                <i class="material-icons">description</i>
+                                                            </span>
+                                                            <div class="form-group label-floating">
+                                                                <input name="item" data-bind="value: spendModel.item" type="text" placeholder="Spend for" class="form-control">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon">
+                                                                <i class="material-icons">money</i>
+                                                            </span>
+                                                            <div class="form-group label-floating">
+                                                                <input name="amount" data-bind="value: spendModel.amount" placeholder="0.0" type="number" class="form-control">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon">
+                                                                <i class="material-icons">date_range</i>
+                                                            </span>
+                                                            <div class="form-group">
+                                                                <input name="date" data-bind="value: spendModel.date" type="text" class="form-control datepicker">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-10 col-sm-offset-1">
+                                                        <div class="radio radio-inline">
+                                                            <label>
+                                                                <input type="radio" name="transactiontype" value="Debit"> Debit
+                                                            </label>
+                                                        </div>
+
+                                                        <div class="radio radio-inline">
+                                                            <label>
+                                                                <input type="radio" name="transactiontype" value="Credit"> Credit
+                                                            </label>
+                                                        </div>
+
+                                                        <div class="radio radio-inline">
+                                                            <label>
+                                                                <input type="radio" name="transactiontype" value="Cash"> Cash
+                                                            </label>
+                                                        </div>
+
+
+                                                        <input type="text" class="tagsinput" data-role="tagsinput" data-color="rose" data-bind="value: spendModel.tags" />
+
+                                                        <!-- You can change data-color="rose" with one of our colors primary | warning | info | danger | success -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="tab-pane" id="address">
+                                                <div class="row">
+                                                    <div class="col-sm-7 col-sm-offset-1">
+                                                        <div class="form-group">
+                                                            <div class="form-group label-floating">
+                                                                <label class="control-label"> Description or Special Information</label>
+                                                                <textarea class="form-control" data-bind="value: spendModel.note" rows="5"></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="wizard-footer">
+                                            <div class="pull-right">
+                                                <input type='button' class='btn btn-next btn-fill btn-rose btn-wd' name='next' value='Next' />
+                                                <input type='button' class='btn btn-finish btn-fill btn-rose btn-wd' data-bind="events:{click: spendModel.addItem}" name='finish' value='Finish' />
+                                            </div>
+
+                                            <div class="pull-left">
+                                                <input type='button' class='btn btn-previous btn-fill btn-default btn-wd' name='previous' value='Previous' />
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div> <!-- wizard container -->
+                        </div>
+
+                    </div>
+                </div>
+
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <p class="copyright pull-right text-white" style="color:white">
+                            &copy;
+                            <a style="color:white"> Andril Veedu </a>,  made with love for a better Home
+                        </p>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+</div>
+<script id="categorylistTemplate" type="text/x-kendo-template">
+    # var j=0; for(var i=0;i < data.length;i++) { j++; #
+    #if (j == 1){ #
+    <tr>
+        #} #
+
+        <td width="25%">
+            <div class="choice" data-toggle="wizard-radio">
+                <input type="radio" name="category" value="${data[i].category}">
+                <div class="icon">
+                    <img src="${data[i].img}" />
+                </div>
+                <h6>${data[i].category}</h6>
+            </div>
+        </td>
+        #if (j == 4){ j =0;#
+        </tr>
+        #} #
+    #}#
+</script>
