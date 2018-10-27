@@ -222,8 +222,11 @@
             url: url +"&user="+userName+"&pin="+pwd,
             complete: function (jqxhr, txt_status) {
                 result = jqxhr;
+				app.showNotification(txt_status);
             }
         });
+		
+		app.showNotification(result.responseText);
         return result.responseText;
        
     };
